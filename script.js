@@ -1,16 +1,55 @@
-function appendValue(value) {
-    document.getElementById('display').value += value;
-}
+const buttons = document.querySelectorAll('.btn');
+const display = document.querySelector('.calculator__result');
+let currentInput = '';
+let previousInput = '';
+let operator = '';
 
-function clearDisplay() {
-    document.getElementById('display').value = '';
-}
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const value = button.textContent;
 
-function calculate() {
-    try {
-        let result = eval(document.getElementById('display').value);
-        document.getElementById('display').value = result;
-    } catch {
-        document.getElementById('display').value = 'Erro';
+        if (value === 'C') {
+            currentInput = '';
+            previousInput = '';
+            operator = '';
+            display.textContent = '0';
+        } else if (value === '=') {
+            if (previousInput && operator && currentInput) {
+                currentInput = evaluate(previousInput, operator, currentInput);
+                display.textContent = currentInput;
+                previousInput = '';
+                operator = '';
+            }
+        } else if (['+', '-', 'x', '÷'].includes(value)) {
+            if (previousInput && operator && currentInput) {
+                currentInput = evaluate(previousInput, operator, currentInput);
+                display.textContent = currentInput;
+            }
+            operator = value;
+            previousInput = currentInput;
+            currentInput = '';
+        } else {
+            currentInput += value;
+            display.textContent = currentInput;
+        }
+    });
+});
+
+function evaluate(a, operator, b) {
+    a = parseFloat(a);
+    b = parseFloat(b);
+    switch (operator) {
+        case '+':
+            return a + b;
+        case '-':
+            return a - b;
+        case 'x':
+            return a * b;
+        case '÷':
+            return a / b;
+        default:
+            return b;
     }
 }
+
+document.getElementById('currentYear').textContent = new Date().getFullYear();
