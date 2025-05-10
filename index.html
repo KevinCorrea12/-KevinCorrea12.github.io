@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica- Kevin Corrêa Jacques Gamba</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculadora </h1>
+        <h1>Desenvolvida por Kevin Correa Jacques Gamba</h1>
+        <div class="inputs">
+            <input type="number" id="n1" placeholder="Primeiro número">
+            <input type="number" id="n2" placeholder="Segundo número">
+        </div>
+        <div class="buttons">
+            <button onclick="calcular('+')">+</button>
+            <button onclick="calcular('-')">-</button>
+            <button onclick="calcular('*')">*</button>
+            <button onclick="calcular('/')">/</button>
+        </div>
+        <div class="result">
+            <p>Resultado: <span id="resultado">0</span></p>
+        </div>
+        <button onclick="limpar()">Limpar</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
