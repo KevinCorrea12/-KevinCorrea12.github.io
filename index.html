@@ -7,32 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <footer>
-    <p>Desenvolvido por <strong>Kevin Corrêa Jacques Gamba</strong></p>
-    <p>&copy; <span id="currentYear"></span> Todos os direitos reservados.</p>
-</footer>
     <div class="calculator">
-        <input type="text" id="display" class="display" disabled>
-        <div class="buttons">
-            <button onclick="appendValue('7')">7</button>
-            <button onclick="appendValue('8')">8</button>
-            <button onclick="appendValue('9')">9</button>
-            <button onclick="appendValue('/')">/</button>
-            <button onclick="appendValue('4')">4</button>
-            <button onclick="appendValue('5')">5</button>
-            <button onclick="appendValue('6')">6</button>
-            <button onclick="appendValue('*')">*</button>
-            <button onclick="appendValue('1')">1</button>
-            <button onclick="appendValue('2')">2</button>
-            <button onclick="appendValue('3')">3</button>
-            <button onclick="appendValue('-')">-</button>
-            <button onclick="appendValue('0')">0</button>
-            <button onclick="appendValue('.')">.</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="appendValue('+')">+</button>
-            <button onclick="clearDisplay()">C</button>
+        <div class="calculator__screen">
+            <h6 class="calculator__operation">1258 + 963</h6>
+            <h5 class="calculator__result">2194</h5>
+        </div>
+        <div class="calculator__buttons">
+            <button class="btn highlight">C</button>
+            <button class="btn highlight">÷</button>
+            <button class="btn highlight">x</button>
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn highlight">-</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn highlight">+</button>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn equal">=</button>
+            <button class="btn">%</button>
+            <button class="btn">0</button>
+            <button class="btn">.</button>
         </div>
     </div>
+    <footer>
+        <p>Desenvolvido por <strong>Kevin Corrêa Jacques Gamba</strong></p>
+        <p>&copy; <span id="currentYear"></span> Todos os direitos reservados.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
